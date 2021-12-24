@@ -1,10 +1,14 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<h1>{{project.title}}</h1>
-<br>
-<p>{{project.description}}</p>
+    <h1>{{ project.title }}</h1>
+    <hr>
+    {% for tag in project.tags.all %}
+        <span style="border: 1px solid #b8aeaf">{{ tag }}</span>
+    {% endfor %}
+    <hr>
+    <br>
+    <p>{{ project.description }}</p>
 
-
-{% endblock content %}
+{% endblock %}
 
